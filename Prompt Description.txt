@@ -1,0 +1,42 @@
+### Bash Prompt Overview
+
+**Basic Understanding:**
+- **Function:** The bash prompt is a string in the terminal indicating readiness for user input.
+- **Default Information:** Typically shows the current user, hostname, and working directory.
+- **Appearance:** Displayed on a new line, followed by a cursor.
+
+**Standard Format Examples:**
+1. **User Prompt:** `<username>@<hostname><current working directory>$`
+   - Home Directory Symbol: `~`
+   - Example: `<username>@<hostname>[~]$`
+2. **Root Prompt:** Changes to a hash `#` for root user.
+   - Example: `root@htb[/htb]#`
+
+**Customization:**
+- **Purpose:** Enhances user experience by providing useful information.
+- **Customization Options:** Display IP address, date, time, last command status, etc.
+- **Penetration Testing Utility:** Helps organize and review command history during tests.
+- **Configuration File:** `.bashrc` for Bash shell.
+
+**Special Characters for Customization:**
+- `\d`: Date (Mon Feb 6)
+- `\D{%Y-%m-%d}`: Date (YYYY-MM-DD)
+- `\H`: Full hostname
+- `\j`: Number of jobs managed by the shell
+- `\n`: Newline
+- `\r`: Carriage return
+- `\s`: Shell name
+- `\t`: Time 24-hour (HH:MM:SS)
+- `\T`: Time 12-hour (HH:MM:SS)
+- `\@`: Current time
+- `\u`: Username
+- `\w`: Full path of the current working directory
+
+**Enhancing User Experience:**
+- **Color Schemes & Fonts:** Customizable terminal settings for visual appeal and ease of use.
+- **Tools for Customization:** Bash-prompt-generator and powerline for advanced prompt design.
+
+**Contextual Similarity:**
+- Like Windows GUI, bash prompt provides user and location context within the system.
+- Customization of the bash prompt is possible, enhancing user experience and efficiency.
+

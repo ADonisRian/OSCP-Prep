@@ -1,0 +1,67 @@
+### Containerization in Linux
+
+#### Overview
+Containerization involves running applications in isolated environments using technologies like Docker, Docker Compose, and Linux Containers (LXC). This method provides efficiency, security, scalability, and portability, making it essential for modern application deployment and management.
+
+#### Docker
+Docker is an open-source platform automating the deployment of applications in lightweight and portable containers. It allows for easy creation, deployment, and management of containerized applications.
+
+1. **Installing Docker-Engine**:
+   - Update package lists and install prerequisites.
+   - Set up Docker repository and install Docker Engine.
+   - Add user to the Docker group for non-root access.
+   - Test installation with `docker run hello-world`.
+
+2. **Docker Management**:
+   - **Commands**:
+     - `docker ps`: List running containers.
+     - `docker stop <container>`: Stop a running container.
+     - `docker start <container>`: Start a stopped container.
+     - `docker restart <container>`: Restart a container.
+     - `docker rm <container>`: Remove a container.
+     - `docker rmi <image>`: Remove an image.
+     - `docker logs <container>`: View container logs.
+
+3. **Creating a Docker Image**:
+   - Write a Dockerfile with instructions.
+   - Build the image with `docker build -t <tag>`.
+   - Run the container mapping ports and detaching it with `docker run -p <host_port>:<container_port> -d <image>`.
+
+#### Linux Containers (LXC)
+LXC is a virtualization technology for running multiple isolated Linux systems (containers) on a single Linux control host.
+
+1. **Installing LXC**:
+   ```bash
+   sudo apt-get install lxc lxc-utils -y
+   ```
+
+2. **Creating and Managing LXC Containers**:
+   - Create a container: `sudo lxc-create -n <name> -t <template>`
+   - Manage containers with various `lxc-*` commands.
+   - Set resource limits and network settings in container configuration.
+
+3. **Securing LXC Containers**:
+   - Implement namespaces for process and network isolation.
+   - Set resource limits in configuration files.
+   - Apply mandatory access controls for additional security.
+
+4. **Practice Exercises**:
+   - Install LXC and create a container.
+   - Configure network settings and resource limits.
+   - Create custom LXC images.
+   - Explore `lxc-*` commands.
+   - Set up SSH access and connect remotely.
+   - Create a persistent container.
+   - Test software in a controlled LXC environment.
+
+#### Container Security
+- Containers provide isolated environments, enhancing security.
+- Use encryption and other security protocols for data transfers.
+- Regularly update and patch containers for security.
+
+#### Docker vs. LXC
+- **Docker** focuses on application-centric containerization with user-friendly interfaces, security, and portability.
+- **LXC** offers lightweight virtualization, providing a more traditional Linux environment within containers.
+
+#### Conclusion
+Containerization with Docker and LXC offers a flexible, secure, and efficient way to deploy and manage applications. Understanding these technologies is crucial for modern system administration and software development. Regular updates, security practices, and proper configuration are key to maintaining secure and efficient containerized environments.

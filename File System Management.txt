@@ -1,0 +1,65 @@
+### File System Management in Linux
+
+#### Overview
+Managing the Linux file system involves organizing and maintaining data on storage devices. Linux supports various file systems, each tailored for specific requirements.
+
+#### Inodes
+- **Basics**: Inodes are the building blocks of the Linux file system, storing metadata about files and directories.
+- **Types**: Regular files and directories, along with symbolic links.
+- **Permissions**: Control access to files and directories.
+
+#### Disks & Drives
+- **Tools**: `fdisk`, `gpart`, and GParted are common for disk management.
+- **Partitioning**: Involves dividing storage into logical sections, each formatted with a file system like ext4, NTFS, or FAT32.
+
+#### Fdisk Example
+```bash
+ADonisRian@htb[/htb]$ sudo fdisk -l
+```
+This command displays information about all connected disks and partitions.
+
+#### Mounting
+- **Process**: Involves attaching a drive to a specific directory in the file system hierarchy.
+- **Tools**: The `mount` command is used for mounting, and `/etc/fstab` contains default mount settings.
+
+#### Mounted File Systems at Boot
+```bash
+ADonisRian@htb[/htb]$ cat /etc/fstab
+```
+This file lists file systems to be automatically mounted at boot time.
+
+#### List Mounted Drives
+```bash
+ADonisRian@htb[/htb]$ mount
+```
+Shows all currently mounted file systems.
+
+#### Mounting & Unmounting Drives
+- **Mounting**: `sudo mount /dev/sdb1 /mnt/usb`
+- **Unmounting**: `sudo umount /mnt/usb`
+- **Precautions**: Ensure no processes are using the mount point before unmounting.
+
+#### Swap Space
+Swap space is an extension of physical memory, allowing the system to offload inactive memory pages to disk space when physical memory is full.
+
+- **Creation**: Use `mkswap` to set up a swap area, and `swapon` to activate it.
+- **Usage**: Swap space is used for both swapping and hibernation.
+- **Security**: Encrypt swap space to protect sensitive data.
+
+#### File System Encryption
+- **Goal**: To secure sensitive data stored on the file system.
+- **Tools**: EncFS, eCryptfs, and LUKS are popular for encrypting file systems.
+- **Process**: Encrypt the file system and require a passphrase or key for access.
+
+#### File System Backup & Recovery
+- **Importance**: Essential for data protection and disaster recovery.
+- **Tools**: `tar`, `rsync`, and `dd` are common for backing up file systems.
+- **Strategies**: Regular backups, offsite storage, and testing recovery procedures.
+
+#### File System Maintenance
+- Regularly check file system health using `fsck`.
+- Defragment file systems if needed (less common with modern file systems like ext4 and XFS).
+- Monitor disk usage and clean up unnecessary files.
+
+#### Conclusion
+Effective file system management in Linux is key to system stability, data integrity, and security. Understanding and properly utilizing the tools and processes for managing file systems, disks, and memory ensures a well-maintained and secure Linux environment.

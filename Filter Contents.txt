@@ -1,0 +1,129 @@
+### Filtering Content in Linux
+
+#### Overview
+Linux offers a variety of command-line tools to filter and process file contents. These tools are essential for efficiently handling text files, especially large ones, and are crucial for system administration tasks.
+
+#### Tools and Usage
+
+1. **More and Less**
+   - `more` and `less` are interactive pagers to view file content.
+   - **More**: Displays content page-wise but leaves output in the terminal.
+     ```bash
+     more /etc/passwd
+     ```
+   - **Less**: Similar to `more` but does not leave output in the terminal.
+     ```bash
+     less /etc/passwd
+     ```
+
+2. **Head and Tail**
+   - `head` displays the first ten lines of a file.
+     ```bash
+     head /etc/passwd
+     ```
+   - `tail` displays the last ten lines of a file.
+     ```bash
+     tail /etc/passwd
+     ```
+
+3. **Sort**
+   - Sorts file content alphabetically or numerically.
+     ```bash
+     cat /etc/passwd | sort
+     ```
+
+4. **Grep**
+   - Searches for patterns in the text.
+   - Example: Find users with "/bin/bash" shell.
+     ```bash
+     cat /etc/passwd | grep "/bin/bash"
+     ```
+   - Exclude specific patterns using `-v`.
+     ```bash
+     cat /etc/passwd | grep -v "false\|nologin"
+     ```
+
+5. **Cut**
+   - Removes specific delimiters and displays specified positions.
+     ```bash
+     cat /etc/passwd | cut -d":" -f1
+     ```
+
+6. **Tr**
+   - Replaces certain characters.
+     ```bash
+     cat /etc/passwd | tr ":" " "
+     ```
+
+7. **Column**
+   - Displays results in tabular form.
+     ```bash
+     cat /etc/passwd | tr ":" " " | column -t
+     ```
+
+8. **Awk**
+   - Programming language for text processing.
+   - Example: Display first and last field.
+     ```bash
+     cat /etc/passwd | awk '{print $1, $NF}'
+     ```
+
+9. **Sed**
+   - Stream editor for text manipulation.
+   - Example: Replace "bin" with "HTB".
+     ```bash
+     ... | sed 's/bin/HTB/g'
+     ```
+
+10. **Wc**
+    - Counts lines, words, characters in text.
+    - Example: Count lines.
+      ```bash
+      ... | wc -l
+      ```
+
+#### Practice Exercises
+Using `/etc/passwd`, practice the following tasks:
+
+1. **Find Specific User**
+   ```bash
+   grep "cry0l1t3" /etc/passwd
+   ```
+
+2. **Extract Usernames**
+   ```bash
+   cut -d":" -f1 /etc/passwd
+   ```
+
+3. **User and UID**
+   ```bash
+   grep "cry0l1t3" /etc/passwd | cut -d":" -f1,3
+   ```
+
+4. **User and UID with Comma**
+   ```bash
+   grep "cry0l1t3" /etc/passwd | cut -d":" -f1,3 --output-delimiter=','
+   ```
+
+5. **Username, UID, Shell with Comma**
+   ```bash
+   grep "cry0l1t3" /etc/passwd | cut -d":" -f1,3,7 --output-delimiter=','
+   ```
+
+6. **All Usernames, UID, Shells with Comma**
+   ```bash
+   cut -d":" -f1,3,7 --output-delimiter=',' /etc/passwd
+   ```
+
+7. **Exclude nologin/false Users**
+   ```bash
+   grep -v "nologin\|false" /etc/passwd | cut -d":" -f1,3,7 --output-delimiter=','
+   ```
+
+8. **Count Filtered Output**
+   ```bash
+   grep -v "nologin\|false" /etc/passwd | wc -l
+   ```
+
+#### VPN Servers
+The mentioned practice exercises are tailored to enhance familiarity with Linux commands. However, there's no specific context provided about VPN servers in this section. For information or tasks related to VPN servers, please specify the details or questions you have in mind.

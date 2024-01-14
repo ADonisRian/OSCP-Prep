@@ -1,0 +1,34 @@
+### Editing Files
+
+#### Nano Editor
+- **Overview**: Easier for beginners, direct file creation.
+- **Usage**: 
+  - Open with `nano notes.txt`.
+  - A "pager" opens for text entry.
+- **Key Features**:
+  - Search Function: `[CTRL + W]` for searching words.
+  - Saving File: `[CTRL + O]` to save, confirm with `[ENTER]`.
+  - Exiting: `[CTRL + X]` to exit the editor.
+- **Viewing File Contents**: Use `cat` command (e.g., `cat notes.txt`).
+
+#### Vim Editor
+- **Overview**: Open-source, powerful, suitable for all ASCII text.
+- **Strengths**: 
+  - Focuses on essential text editing.
+  - Interface with external programs (e.g., grep, awk, sed).
+  - Adheres to Unix principle of specialized, combinable programs.
+- **Modes**:
+  - **Normal Mode**: Inputs are editor commands.
+  - **Insert Mode**: Entered characters are inserted into the buffer.
+  - **Visual Mode**: For marking and editing text.
+  - **Command Mode**: For entering single-line commands.
+  - **Replace Mode**: Overwrites existing text with new entries.
+- **Using Vim**:
+  - Open with `vim`.
+  - Command Mode: Type ":" and "q" to exit.
+- **Learning Tool**: `vimtutor` for practice and familiarization.
+
+#### Key Takeaways
+- **Nano** is user-friendly, great for simple editing tasks.
+- **Vim** is more complex but offers powerful features for advanced text manipulation.
+- Both editors are integral to effective file management in Linux environments, especially for tasks like penetration testing.

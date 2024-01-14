@@ -1,0 +1,38 @@
+Linux Terminal Shortcuts
+Mastering Linux terminal shortcuts can greatly enhance your efficiency and speed when working with Linux. These shortcuts can reduce typing, streamline navigation, and simplify repetitive tasks. Here's a guide to some of the most useful Linux terminal shortcuts:
+
+1. Auto-Complete
+[TAB]: Suggests options based on the input so far, including commands, directories, file names, etc.
+2. Cursor Movement
+[CTRL] + A: Moves the cursor to the start of the current line.
+[CTRL] + E: Moves the cursor to the end of the current line.
+[CTRL] + [←]/[→]: Jumps to the start of the current/previous word.
+[ALT] + B / F: Moves backward/forward one word.
+3. Erase The Current Line
+[CTRL] + U: Deletes everything from the cursor to the beginning of the line.
+[CTRL] + K: Deletes everything from the cursor to the end of the line.
+[CTRL] + W: Deletes the word before the cursor.
+4. Paste Erased Contents
+[CTRL] + Y: Pastes the last erased text or word.
+5. Ends Task
+[CTRL] + C: Terminates the current task/process (SIGINT signal).
+6. End-of-File (EOF)
+[CTRL] + D: Closes STDIN pipe, signaling End-of-File or End-of-Transmission.
+7. Clear Terminal
+[CTRL] + L: Clears the terminal, similar to the clear command.
+8. Background a Process
+[CTRL] + Z: Suspends the current process (SIGTSTP signal).
+9. Search Through Command History
+[CTRL] + R: Initiates a reverse search through command history.
+[↑]/[↓]: Navigate to the previous/next command in history.
+10. Switch Between Applications
+[ALT] + [TAB]: Switches between open applications.
+11. Zoom
+[CTRL] + [+]: Zooms in.
+[CTRL] + [-]: Zooms out.
+Tips for Maximizing Efficiency with Shortcuts
+Practice Regularly: The more you use these shortcuts, the more intuitive they become.
+Combine with Command-Line Tools: Enhance productivity by combining these shortcuts with powerful command-line tools like grep, awk, sed, etc.
+Customize Your Terminal: Many terminals allow you to customize or add new shortcuts.
+Conclusion
+Adopting these shortcuts in your daily workflow can significantly increase your productivity and ease of use when working in the Linux terminal. Remember, practice and consistency are key to making these shortcuts a natural part of your command-line activities.

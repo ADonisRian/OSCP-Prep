@@ -1,0 +1,58 @@
+### Network Configuration in Linux
+
+#### Overview
+Mastering network configuration on Linux is vital for effective penetration testing. It involves setting up interfaces, understanding protocols, and configuring network access control.
+
+#### Configuring Network Interfaces
+- **Commands**: Use `ifconfig` or `ip` to configure network interfaces.
+- **Activation**: Enable an interface with `sudo ifconfig eth0 up` or `sudo ip link set eth0 up`.
+- **IP Assignment**: Assign IP using `sudo ifconfig eth0 192.168.1.2`.
+- **Setting Netmask**: `sudo ifconfig eth0 netmask 255.255.255.0`.
+- **Default Gateway**: Set with `sudo route add default gw 192.168.1.1 eth0`.
+
+#### DNS Configuration
+- **File Editing**: Update `/etc/resolv.conf` for DNS settings.
+- **Sample Configuration**:
+  ```bash
+  nameserver 8.8.8.8
+  nameserver 8.8.4.4
+  ```
+
+#### Persisting Network Configuration
+- **File**: Edit `/etc/network/interfaces` to save settings.
+- **Restart Networking**: Apply changes with `sudo systemctl restart networking`.
+
+#### Network Access Control
+- **Technologies**: DAC, MAC, RBAC.
+- **Implementation**: Configure SELinux, AppArmor, TCP Wrappers for security.
+
+#### Monitoring and Troubleshooting Tools
+- **Ping**: Check connectivity.
+- **Traceroute**: Trace the packet route.
+- **Netstat**: View active connections.
+- **Tcpdump & Wireshark**: Analyze network traffic.
+- **Nmap**: Network mapping and security auditing.
+
+#### Hardening Network Security
+- **SELinux**: Configure for fine-grained access control.
+- **AppArmor**: Simplifies the security profile management.
+- **TCP Wrappers**: Controls access to network services.
+
+#### Common Network Issues
+- **Connectivity**: Check configurations, cable connections.
+- **DNS Resolution**: Verify DNS settings.
+- **Packet Loss**: Investigate physical connections, network congestion.
+- **Performance**: Look into network configurations, outdated hardware.
+
+#### Setting Up Security Measures
+- **SELinux**: Install and configure to restrict user access to resources.
+- **AppArmor**: Set up profiles to control application permissions.
+- **TCP Wrappers**: Configure host-based access control.
+
+#### Practicing Network Configuration
+- **Virtual Machines**: Utilize VMs for practicing configurations.
+- **Community Engagement**: Collaborate on Discord for learning and sharing knowledge.
+- **Hands-on Tasks**: Implement tasks related to SELinux, AppArmor, and TCP wrappers.
+
+#### Conclusion
+A thorough understanding of network configuration and security measures in Linux is crucial for effective penetration testing. Practicing these skills in a controlled environment, like a VM, and collaborating with peers can significantly enhance your capabilities in network management and security in Linux.

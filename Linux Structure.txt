@@ -1,0 +1,58 @@
+### Linux Structure Notes
+
+**History of Linux:**
+- **Origins:** Unix OS by Ken Thompson & Dennis Ritchie at AT&T in 1970.
+- **Berkeley Software Distribution (BSD):** Released in 1977, entangled in a lawsuit due to Unix code.
+- **GNU Project:** Started in 1983 by Richard Stallman, aiming for a free Unix-like OS; led to the GNU GPL.
+- **Linux Kernel:** Initiated in 1991 by Linus Torvalds, a Finnish student. It evolved from a small project under restrictive licensing to a vast, GPL v2 licensed system with over 23 million lines of code.
+- **Linux Distributions:** Over 600, including Ubuntu, Debian, Fedora, OpenSUSE, elementary, Manjaro, Gentoo Linux, RedHat, and Linux Mint.
+
+**Characteristics of Linux:**
+- **Security:** More secure, less susceptible to malware compared to Windows.
+- **Updates & Stability:** Regular updates, high performance, and stability.
+- **User Accessibility:** More challenging for beginners, fewer hardware drivers than Windows.
+- **Open-Source:** Free, modifiable, and distributable (commercially/non-commercially).
+- **Versatility:** Used in servers, mainframes, desktops, embedded systems, and as the basis for Android OS.
+- **Comparative OS:** Functions like Windows, iOS, Android, macOS; manages hardware-software communication.
+- **Primary OS for Modules:** Parrot OS, a Debian-based distribution focusing on security, privacy, and development.
+
+**Linux Philosophy:**
+1. **Everything is a File:** All configurations in text files.
+2. **Single-Purpose Programs:** Multiple tools for diverse functions.
+3. **Program Chaining:** Complex tasks through tool integration.
+4. **No Captive Interfaces:** Shell-based control, avoiding GUI limitations.
+5. **Text-Based Configuration:** Example - `/etc/passwd` for user info.
+
+**Components of Linux:**
+- **Bootloader:** Initiates OS booting (e.g., GRUB in Parrot Linux).
+- **Kernel:** Manages I/O device resources at the hardware level.
+- **Daemons:** Background services for essential functions.
+- **Shell:** Command interface for user-OS interactions. Common shells include Bash, Tcsh/Csh, Ksh, Zsh, and Fish.
+- **Graphics Server:** Enables graphical programs (X-server).
+- **Window Manager:** GUI options like GNOME, KDE, MATE, Unity, Cinnamon.
+- **Utilities:** Specific function applications.
+
+**Linux Architecture:**
+1. **Hardware Layer:** Peripheral devices (RAM, CPU, etc.).
+2. **Kernel:** Core of OS, managing and virtualizing hardware resources.
+3. **Shell:** CLI for executing kernel functions.
+4. **System Utility:** Provides OS functionalities.
+
+**File System Hierarchy (FHS):**
+- **Root (`/`):** Top-level directory for booting and mounting filesystems.
+- **Binaries (`/bin`):** Essential command binaries.
+- **Boot (`/boot`):** Bootloader and kernel executable files.
+- **Devices (`/dev`):** Device files for hardware access.
+- **System Config (`/etc`):** Local system and application configuration files.
+- **Home (`/home`):** User directories.
+- **Libraries (`/lib`):** Shared libraries for system boot.
+- **Media (`/media`):** Mount point for removable media.
+- **Mount (`/mnt`):** Temporary filesystem mount point.
+- **Optional (`/opt`):** Third-party tools.
+- **Root User Home (`/root`):** Home directory for root user.
+- **System Admin Binaries (`/sbin`):** Executables for system administration.
+- **Temporary Files (`/tmp`):** Temp files, often cleared on boot.
+- **User Programs (`/usr`):** Executables, libraries, man files.
+- **Variable Data (`/var`):** Data files like logs, emails, web files,
+
+cron files, etc.

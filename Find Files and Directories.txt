@@ -1,0 +1,36 @@
+### Find Files and Directories
+
+#### Importance of Search
+- Essential for locating necessary files and folders, especially in Linux systems during penetration testing.
+
+#### Tools for Finding Files
+
+1. **Which**
+   - **Function**: Returns the path of the file or link to be executed.
+   - **Usage**: Identify if specific programs (like Python, gcc) are available.
+   - **Example**: `which python` → `/usr/bin/python`
+   - **Note**: If a program is not found, no result is displayed.
+
+2. **Find**
+   - **Function**: Locates files and folders with filtering options.
+   - **Syntax**: `find <location> <options>`
+   - **Example**: 
+     - Command: `find / -type f -name *.conf -user root -size +20k -newermt 2020-03-03 -exec ls -al {} \; 2>/dev/null`
+     - Options: 
+       - `-type f`: Search for files.
+       - `-name *.conf`: Files with `.conf` extension.
+       - `-user root`: Files owned by root.
+       - `-size +20k`: Files larger than 20 KiB.
+       - `-newermt 2020-03-03`: Files newer than a specific date.
+       - `-exec ls -al {} \;`: Execute command on found files.
+       - `2>/dev/null`: Redirects errors to null.
+
+3. **Locate**
+   - **Function**: Faster search using a local database.
+   - **Usage**: Update database with `sudo updatedb`.
+   - **Example**: `locate *.conf` for quick search of `.conf` files.
+   - **Limitation**: Fewer filter options compared to `find`.
+
+#### Choosing the Right Tool
+- **Context-Dependent**: Use `locate` for quick, general searches; `find` for detailed, filtered searches.
+- **Note**: `locate` is faster due to its reliance on a pre-built local database.

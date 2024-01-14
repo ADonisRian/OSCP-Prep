@@ -1,0 +1,56 @@
+### Permission Management in Linux
+
+#### Overview
+- **Permissions**: Assigned to users and groups in Linux.
+- **File Ownership**: Each file/directory belongs to a user and a group.
+- **Execute Permission**: Required to traverse (access) directories.
+- **Read, Write, Execute**: Key permissions for files and directories.
+
+#### Permissions for Files and Directories
+- **Read (r)**: View the contents.
+- **Write (w)**: Modify or delete contents.
+- **Execute (x)**: Run files or access directory contents.
+
+#### Permission Representation
+- **Binary Notation**: 4 (read), 2 (write), 1 (execute).
+- **Octal Value**: Sum of binary notation (e.g., 7 = rwx, 5 = rx, 4 = r).
+- **Syntax**: `- rwx rw- r--`
+  - **Owner**: First group (e.g., rwx).
+  - **Group**: Second group (e.g., rw-).
+  - **Others**: Third group (e.g., r--).
+
+#### Changing Permissions - `chmod`
+- **Syntax**: `chmod [permissions] [file/directory]`
+- **Examples**:
+  - `chmod a+r file`: Add read permission for all.
+  - `chmod 754 file`: Set permissions to rwxr-xr--.
+
+#### Changing Ownership - `chown`
+- **Syntax**: `chown [user]:[group] [file/directory]`
+- **Example**: `chown root:root file`
+
+#### Special Permissions
+1. **Set User ID (SUID)**: Execute as the file owner (e.g., root).
+2. **Set Group ID (SGID)**: Execute as the group owner.
+3. **Sticky Bit**:
+   - **Use**: Protect files in shared directories.
+   - **Representation**: "t" in directory permissions.
+   - **Function**:
+     - Lowercase "t": Others have execute permission.
+     - Uppercase "T": Others do not have execute permission.
+   - **Example**: `drw-rw-r-t` (sticky bit set).
+
+#### Example Scenario
+- **Directory Listing**:
+  - `drw-rw-r-t 3 cry0l1t3 cry0l1t3 4096 Jan 12 12:30 scripts`
+  - `drw-rw-r-T 3 cry0l1t3 cry0l1t3 4096 Jan 12 12:32 reports`
+- **Interpretation**:
+  - `scripts`: Sticky bit set, others can execute.
+  - `reports`: Sticky bit set, others cannot execute.
+
+#### Importance
+- **Security**: Proper permission management is vital for system security.
+- **Functionality**: Ensures users can access necessary files and perform required tasks.
+- **Control**: Restricts access to sensitive data and system files.
+
+Understanding and correctly applying permissions in Linux is crucial for maintaining system security, functionality, and control over file access and execution.

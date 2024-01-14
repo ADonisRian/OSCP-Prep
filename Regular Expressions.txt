@@ -1,0 +1,48 @@
+### Regular Expressions (RegEx) Practice Exercises
+
+#### Exercise Instructions
+Using the `/etc/ssh/sshd_config` file, perform the following tasks with RegEx:
+
+1. **Lines Without '#'**
+   - Goal: Display lines that do not contain the character `#`.
+   - Command: `grep -v "#" /etc/ssh/sshd_config`
+
+2. **Lines with Words Starting with 'Permit'**
+   - Goal: Find lines with words beginning with "Permit".
+   - Command: `grep -E "\bPermit\w*" /etc/ssh/sshd_config`
+   - Explanation: `\b` denotes a word boundary, and `\w*` matches any word character.
+
+3. **Lines with Words Ending in 'Authentication'**
+   - Goal: Locate lines with words ending in "Authentication".
+   - Command: `grep -E "\w*Authentication\b" /etc/ssh/sshd_config`
+
+4. **Lines Containing the Word 'Key'**
+   - Goal: Find lines that contain the word "Key".
+   - Command: `grep "Key" /etc/ssh/sshd_config`
+
+5. **Lines Starting with 'Password' and Containing 'yes'**
+   - Goal: Search for lines that start with "Password" and include "yes".
+   - Command: `grep -E "^Password.*yes" /etc/ssh/sshd_config`
+   - Explanation: `^` indicates the start of a line.
+
+6. **Lines Ending with 'yes'**
+   - Goal: Display lines that end with "yes".
+   - Command: `grep -E "yes$" /etc/ssh/sshd_config`
+   - Explanation: `$` signifies the end of a line.
+
+#### Understanding Regular Expressions
+- **Powerful Tool**: RegEx allows for complex pattern searching and manipulation in text.
+- **Syntax and Operators**:
+  - **Grouping**: `(a)` for specific group patterns.
+  - **Character Classes**: `[a-z]` for a range of characters.
+  - **Quantifiers**: `{1,10}` for specifying repetitions.
+  - **OR Operator (`|`)**: Matches either of the expressions.
+  - **AND Operator (`.*`)**: Matches both expressions in sequence.
+- **Applications**: Widely used in grep, sed, and other tools for text processing.
+
+#### Tips for Practicing RegEx
+- **Experimentation**: Try modifying the expressions for different outcomes.
+- **Manual Pages**: Use `man grep` for more grep-specific RegEx options.
+- **Online Resources**: Utilize online RegEx testers for practice and validation.
+
+RegEx is a versatile tool essential for efficient text processing and data analysis in various computing environments.
